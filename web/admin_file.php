@@ -246,14 +246,21 @@ echo "<TABLE border=1 cellpadding=5 cellspacing=0 class=whitelinks><TR><TH>Selec
 echo "<form ". $_SERVER['PHP_SELF']."?t=".$_GET['t']."&id=".$id ." method=\"POST\">";
 for($index=0; $index < $indexCount; $index++) {
   if (isset($r) && is_array($r) && $dirArray[$index] == $r['filename']) { $ticked='checked'; } else { $ticked=''; }
-    echo "<TR>
-      <td><input type=\"radio\" name=\"filename\" value=\"".$index."\"  ".$ticked."/></td>
-      <td><a href=\"".$ldir.'/'.$dirArray[$index]."\">$dirArray[$index]</a></td>
+    echo "<tr>";
+
+  if ( ($_GET['t'] == 'd' && !preg_match('/\.(ssd|dsd|adl|zip)$/i', $dirArray[$index])) ||
+       ($_GET['t'] == 's' && !preg_match('/\.(jpg|jpeg|png|bmp|gif)$/i', $dirArray[$index]))) {
+    echo "<td></td>";
+  } else {
+    echo "<td><input type=\"radio\" name=\"filename\" value=\"".$index."\"  ".$ticked."/></td>";
+  }
+
+    echo "<td><a href=\"".$ldir.'/'.$dirArray[$index]."\">$dirArray[$index]</a></td>
       <td>".filetype($ldir.'/'.$dirArray[$index])."</td>
       <td>".mime_content_type($ldir.'/'.$dirArray[$index])."</td>
       <td>".filesize($ldir.'/'.$dirArray[$index])."</td>
       <td>".date("d/m/Y H:i:s", filemtime($ldir.'/'.$dirArray[$index]))."</td>
-      </TR>";
+      </tr>";
 }
 ?>
 </TABLE><br/>
