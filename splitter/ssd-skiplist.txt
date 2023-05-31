@@ -40,7 +40,9 @@ Disc156-DerekAndThePooclearWaste.ssd
 Disc156-MysteryOfTheJavaStarSTD.ssd
 Disc157-DerekAndThePooclearWaste.ssd
 Disc157-MysteryOfTheJavaStarSTD.ssd
-Disc165-LadyBugRSTD.ssd
+Disc162-YesChancellorSTD.ssd
+Disc166-ElectrobotsGoingUnderground.ssd
+Disc167-LadyBugRSTD.ssd
 Disc167-VexedSTD.ssd
 Disc172-ValleySTD.ssd
 DiscA05-ZalagaSAM10.ssd
